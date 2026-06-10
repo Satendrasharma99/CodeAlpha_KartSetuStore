@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KartSetuStore | Sci-Fi Cyber-Premium Marketplace</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <canvas id="confetti-layer"></canvas>
+
+    <!-- Header Grid Network -->
+    <header class="cyber-glass">
+        <div class="logo">Kart<span>SetuStore</span></div>
+        <div class="nav-actions">
+            <button class="cart-btn-node" onclick="toggleCartDrawer()">
+                🛒 <span id="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Matrix Layout -->
+    <main>
+        <section class="hero-banner">
+            <!-- Left Grid: Flash Drop Engine -->
+            <div class="drop-widget cyber-glass">
+                <div class="drop-title">⚡ NEXT SECURE FLASH DROP CLOSES IN ⚡</div>
+                <div id="countdown" class="countdown-clock">00:00:00:00</div>
+                <p style="margin-top: 1rem; color: var(--text-muted);">Exclusive prototype allocations streaming directly onto the node network.</p>
+            </div>
+
+            <!-- Right Grid: Gamified Reward Core -->
+            <div class="wheel-wrapper cyber-glass">
+                <div class="wheel-marker"></div>
+                <div id="reward-wheel" class="wheel-box"></div>
+                <button class="spin-trigger" onclick="spinRewardWheel()">Initiate Reward Protocol</button>
+                <div id="wheel-feedback" style="margin-top: 1rem; font-weight: bold; color: var(--neon-green);"></div>
+            </div>
+        </section>
+
+        <!-- Product Interface System -->
+        <section class="catalog-section">
+            <div class="filter-bar" id="category-filters">
+                <div class="filter-chip active" onclick="applyCategoryFilter('all')">ALL MATRICES</div>
+                <div class="filter-chip" onclick="applyCategoryFilter('implants')">NEURAL IMPLANTS</div>
+                <div class="filter-chip" onclick="applyCategoryFilter('hardware')">QUANTUM CORE RUNS</div>
+                <div class="filter-chip" onclick="applyCategoryFilter('gear')">TACTICAL APPAREL</div>
+            </div>
+
+            <div class="products-grid" id="catalog-container">
+                <!-- Programmatically populated matrix arrays -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Slide Out Cart & Checkout Funnel Drawer Matrix -->
+    <div id="cart-drawer" class="drawer-overlay cyber-glass">
+        <div class="drawer-header">
+            <h3>🛒 CART STAGING PIPELINE</h3>
+            <button class="close-drawer" onclick="toggleCartDrawer()">×</button>
+        </div>
+        <div class="drawer-body">
+            <div id="cart-items-container"></div>
+            
+            <!-- Realtime Dynamic EMI / Micro-financing Module -->
+            <div class="emi-system-box">
+                <label style="font-size: 0.85rem; color: var(--neon-cyan); font-weight: bold;">📊 DYNAMIC NEURAL PAY LATER MATRIX</label>
+                <input type="range" id="emi-months" class="emi-slider" min="1" max="12" value="3" oninput="recalculateQuantumEmi()">
+                <div style="display:flex; justify-content:space-between; font-size:0.8rem; color: var(--text-muted);">
+                    <span>1 Month Paylater (0%)</span>
+                    <span>12 Months High-Yield</span>
+                </div>
+                <div style="margin-top:0.5rem; font-size: 0.9rem;" id="emi-calculation-readout">
+                    Processing runtime...
+                </div>
+            </div>
+
+            <!-- Payment Interface Layer -->
+            <div style="margin-top: 2rem;">
+                <label style="font-size:0.8rem; color:var(--text-muted)">SELECT PROTOCOL DESTINATION</label>
+                <select id="payment-gateway-method" class="buy-btn" style="background:#0c0f26; text-align:left;" onchange="toggleFormReadout(this.value)">
+                    <option value="UPI">Secure Quantum UPI Gateway</option>
+                    <option value="CARD">Encrypted Holo-Credit Card</option>
+                    <option value="COD">Capsule Transport (Cash on Delivery)</option>
+                </select>
+
+                <!-- Micro Payment Form Simulation -->
+                <div id="card-extended-fields" style="display:none; margin-top:1rem;">
+                    <input type="text" placeholder="Holo-Card Code Array" class="buy-btn" style="text-align:left; background:#000; color:#fff;">
+                </div>
+
+                <div style="margin-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+                    <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:1.2rem;">
+                        <span>TOTAL ACCRUAL:</span>
+                        <span id="cart-total-readout">₭0.00</span>
+                    </div>
+                    <button class="buy-btn" style="background: var(--neon-pink); border-color: var(--neon-pink); color:#fff; font-size:1.1rem; margin-top:1rem; box-shadow: 0 0 15px rgba(255,0,85,0.4);" onclick="dispatchCheckoutTransaction()">
+                        EXECUTE QUANTUM CHECKOUT
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
