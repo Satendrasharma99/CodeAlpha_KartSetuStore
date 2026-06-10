@@ -1,0 +1,12 @@
+{
+  "name": "kartsetu-platform",
+  "version": "1.0.0",
+  "description": "KartSetu - Sci-Fi Cyber-Premium E-Commerce Platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
